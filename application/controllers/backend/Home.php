@@ -4,15 +4,12 @@
 	class Home extends CI_Controller{
 		public function index(){
 			$datos = array ();
-			$this->load->model('persistencia/modeloPrueba', 'modelo');
 
-			$datos['consulta'] = $this->modelo->consultaPrueba();
-
-			$objeto = new ObjetoPrueba("Primer Objeto", 2);
+			$objeto = new ObjetoPrueba("Objeto Backend", 4);
 
 			$datos['objeto'] = $objeto;
 
-			$this->load->view('vistasTienda/viewTienda', $datos);
+			$this->load->view('vistasBackend/viewBackend', $datos);
 		}
 
 		public function _remap($method, $params = array()){
