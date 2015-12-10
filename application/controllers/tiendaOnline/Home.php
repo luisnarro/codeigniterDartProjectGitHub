@@ -13,17 +13,19 @@
 			// End Header setup
 
 			// Content page setup
-			$datos = array ();
-			$this->load->model('persistencia/modeloPrueba', 'modelo');
+			//$datos = array ();
+			//$this->load->model('persistencia/modeloPrueba', 'modelo');
 			// la información recuperada de la BBDD se pasa a la vista mediante un
 			// array, "datos" en este caso.
-			
+
 			//End Content page setup
 
 			// load Header View
-			$this->load->view('vistasTienda/MenuView');
+			$this->load->view('vistasTienda/Header');
+			$this->load->view('vistasTienda/viewTienda');
+			$this->load->view('vistasTienda/Footer');
 			// load page Content View
-			$this->load->view('vistasTienda/viewTienda', $datos);
+			//$this->load->view('vistasTienda/viewTienda', $datos);
 		}
 
 		public function _remap($method, $params = array()){
@@ -32,6 +34,12 @@
 			} else {
 				$this->index();
 			}
+		}
+
+		private function cargarMenu(){
+			$this->load->model("persistencia/menu_model", "menu");
+			$elementos = $this->menu->all();
+			$this->multi_menu->set_items($elementos);
 		}
 	}
 ?>
