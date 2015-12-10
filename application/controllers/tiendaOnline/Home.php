@@ -3,15 +3,26 @@
 
 	class Home extends CI_Controller{
 		public function index(){
+			// Header setup
+			$this->load->model("persistencia/menu_model", "menu");
+			// la información está disponible en la vista a través del elemento
+			// "elementos" que se guarda en el array "multi_menu" que está disponible
+			// globalmente.
+			$elementos = $this->menu->all();
+			$this->multi_menu->set_items($elementos);			
+			// End Header setup
+
+			// Content page setup
 			$datos = array ();
 			$this->load->model('persistencia/modeloPrueba', 'modelo');
+			// la información recuperada de la BBDD se pasa a la vista mediante un
+			// array, "datos" en este caso.
+			
+			//End Content page setup
 
-			$datos['consulta'] = $this->modelo->consultaPrueba();
-
-			$objeto = new ObjetoPrueba("Primer Objeto", 2);
-
-			$datos['objeto'] = $objeto;
-
+			// load Header View
+			$this->load->view('vistasTienda/MenuView');
+			// load page Content View
 			$this->load->view('vistasTienda/viewTienda', $datos);
 		}
 

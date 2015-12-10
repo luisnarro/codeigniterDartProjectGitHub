@@ -13,7 +13,7 @@
 
 	    public function consultaPrueba()
 	    {
-	    	$query = $this->db->query('SELECT * FROM oc_product');
+	    	$query = $this->db->query('SELECT * FROM st_product');
 	    	return $query->result();
 	    }
 
