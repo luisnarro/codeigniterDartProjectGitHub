@@ -2,6 +2,7 @@
 
 $config["menu_id"]               = 'category_id';
 $config["menu_label"]            = 'name';
+$config["url_name"]				 = 'url_name';
 $config["menu_parent"]           = 'parent_id';
 //$config["menu_icon"] 			 = 'icon';
 $config["menu_key"]              = 'category_id';

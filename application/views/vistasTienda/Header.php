@@ -32,7 +32,7 @@
 		<div class="wrap">
 			<div class="header">
 				<div class="logo">
-					<a href="#"><img src="<?php echo base_url(); ?>public/images/logotipo.png" alt="logo"/> </a>
+					<a href="<?php echo site_url("tiendaOnline");?>"><img src="<?php echo base_url(); ?>public/images/logotipo.png" alt="logo"/> </a>
 				</div>
 				<div class="h_icon">
 					<ul class="icon1 sub-icon1">

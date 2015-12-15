@@ -168,7 +168,15 @@ class Multi_menu {
 	 * 
 	 * @var string
 	 */
-	private $menu_label               = 'name';	
+	private $menu_label               = 'name';
+
+	/**
+	 * Array key that holds Menu url label
+	 * Ex: $items['url_name'] = "Something"
+	 * 
+	 * @var string
+	 */
+	private $menu_url_label               = 'url_label';	
 
 	/**
 	 * Array key that holds Menu key/ menu slug
@@ -440,7 +448,7 @@ class Multi_menu {
 		        {
 		        	$tag_open    = $this->item_tag_open;
 					//$href        = site_url($slug);
-					$href        = site_url('tiendaOnline/product/index/'.$slug);
+					$href        = site_url('tiendaOnline/catalogo/'.$item[$this->url_name]);
 					$item_anchor = $this->item_anchor;
 		        }
 
