@@ -448,7 +448,12 @@ class Multi_menu {
 		        {
 		        	$tag_open    = $this->item_tag_open;
 					//$href        = site_url($slug);
-					$href        = site_url('tiendaOnline/catalogo/'.$item[$this->url_name]);
+
+					//Enlaces en el menu hacia funciones definidas para cada categoría
+					//$href        = site_url('tiendaOnline/catalogo/'.$item[$this->url_name]);
+
+					//Enlaces en el menu hacia una única función (producto()) que recibe el id de la categoría
+					$href        = site_url('tiendaOnline/catalogo/categoria/'.$item[$this->menu_id]);
 					$item_anchor = $this->item_anchor;
 		        }
 

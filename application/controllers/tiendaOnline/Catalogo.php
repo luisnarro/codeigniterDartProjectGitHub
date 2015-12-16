@@ -12,11 +12,13 @@
 			$this->multi_menu->set_items($elementos);
 			// Load category model
 			$this->load->model("persistencia/Category_model", "category");
+			// Load product model
+			$this->load->model("persistencia/Product_model", "product");
 		}
 
 		public function index()
 		{
-			// Mostrar en la vista los diferentes productos que hay haciendo uso de paginación.
+			// Mostrar en la vista las diferentes categorias que hay haciendo uso de paginación.
 			$data = array();
 
 			$offset = $this->uri->segment(4) ? $this->uri->segment(4) : 0;
@@ -44,6 +46,56 @@
 			$this->load->view('vistasTienda/Footer');
 		}
 
+		public function categoria($idCategoria)
+		{
+			$data = array();
+
+			$offset = $this->uri->segment(5) ? $this->uri->segment(5) : 0;
+			$products = $this->product->allByCategory($idCategoria, $this->limit, $offset);
+			$data['products'] = $products;
+			$total_rows = $this->product->countProductsByCategory($idCategoria);
+
+			// configuración para la paginación.
+			$config['total_rows'] = $total_rows;
+			$config['per_page'] = $this->limit;
+			$config['base_url'] = site_url("tiendaOnline/catalogo/producto");
+			$config['uri_segment'] = 5;
+
+			$this->pagination->initialize($config);
+			$page_links = $this->pagination->create_links();
+
+			$data['page_links'] = $page_links;
+			$data['total_rows'] = $total_rows;
+
+			// load Header View
+			$this->load->view('vistasTienda/Header');
+			// load CatalogoProductView
+			$this->load->view('vistasTienda/CatalogoProductView', $data);
+			// load Footer View
+			$this->load->view('vistasTienda/Footer', $data);
+		}
+
+		public function producto($idProducto)
+		{
+			$data = array();
+
+			$product = $this->product->getProduct($idProducto);
+			$data['product'] = $product;
+			// load Header View
+			$this->load->view('vistasTienda/Header');
+			// load ProductDetailsView
+			$this->load->view('vistasTienda/ProductDetailsView', $data);
+			// load Footer View
+			$this->load->view('vistasTienda/Footer');
+		}
+
+		public function sidebarLoad()
+		{
+			$this->load->view('vistasTienda/sidebar');
+		}
+
+		// Funciones definidas para cada una de las categorías, no se utilizan.
+		/*
 		public function dardosPuntaAcero()
 		{
 			// load Header View
@@ -178,5 +230,6 @@
 			// load Footer View
 			$this->load->view('vistasTienda/Footer');
 		}
+		*/
 	}
 ?>
