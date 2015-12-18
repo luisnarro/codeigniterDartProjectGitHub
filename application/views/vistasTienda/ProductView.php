@@ -18,7 +18,7 @@
 			<?php for ($i=0; $i < 2; $i++) : ?>
 				<?php for ($j=0; $j < 3 && $category_count > 0; $j++) : ?>
 					<div class="grid1_of_3">
-						<a href="details.php?productId=$product->productId">
+						<a href="<?php echo site_url("tiendaOnline/catalogo/categoria")."/".$categories[(($i*3)+$j)]->category_id?>">
 							<img src=<?php echo base_url().'public/'.$categories[(($i*3)+$j)]->image;?> alt="Imagen Producto"/>
 							<h3><?php echo $categories[(($i*3)+$j)]->name; ?></h3>
 							<span class="b_btm"></span>

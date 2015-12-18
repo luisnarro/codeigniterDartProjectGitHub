@@ -51,9 +51,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 */
 $route['default_controller'] = 'blog';
 $route['tiendaOnline'] = "tiendaOnline/home";
-$route['catalogo'] = "tiendaOnline/catalogo";
-$route['catalogo/index'] = "tiendaOnline/catalogo/index";
+
+
+$route[LOGIN_PAGE] = 'tiendaOnline/user/login';
 $route['backend'] = "backend/home";
-$route['LOGIN_PAGE'] = "tiendaOnline/examples/login";
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;

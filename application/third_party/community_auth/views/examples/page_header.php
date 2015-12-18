@@ -6,8 +6,8 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Community Auth</title>
 	<style>
-		body{background:#fee;}
-		#menu{float:left;width:100%;background:pink;}
+		/*body{background:#fee;}*/
+		#menu{float:left;width:100%;/*background:pink;*/}
 		@media only screen and ( min-width:801px ){
 			#menu{float:right;width:25%;}
 		}

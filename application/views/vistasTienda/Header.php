@@ -42,7 +42,7 @@
 								<li><p><a href="#">Inicia sesión </a>o<a href="#"> explora nuestros productos</a></p></li>
 							</ul>
 						</li>
-						<li><a id="iniciaSesion" href="login.php">Inicia sesión</a></li>
+						<li><a id="iniciaSesion" href="<?php echo base_url('tiendaOnline/user'); ?>">Inicia sesión</a></li>
 					</ul>
 				</div>
 				<div class="h_search">

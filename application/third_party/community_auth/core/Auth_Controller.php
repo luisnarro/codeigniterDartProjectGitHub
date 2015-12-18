@@ -382,6 +382,7 @@ class Auth_Controller extends CI_Controller {
 		// Set the login URL
 		$view_data['login_url'] = secure_site_url( LOGIN_PAGE . $redirect );
 
+
 		$this->load->vars( $view_data );
 	}
 

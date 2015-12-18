@@ -74,7 +74,7 @@ if( ! isset( $on_hold_message ) )
 		?>
 
 		<p>
-			<a href="<?php echo secure_site_url('examples/recover'); ?>">
+			<a href="<?php echo secure_site_url('recover'); ?>">
 				Can't access your account?
 			</a>
 		</p>

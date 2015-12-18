@@ -81,7 +81,7 @@
 			<?php $i=0;?>
 			<?php foreach ($products as $product):?>
 				<div class="grid1_of_3">
-					<a href="details.php?productId=$product->productId">
+					<a href="<?php echo site_url("tiendaOnline/catalogo/producto")."/".$product->product_id?>">
 						<img src=<?php echo base_url().'public/'.$product->image;?> alt="Imagen Producto"/>
 						<h3><?php echo $product->nombre; ?></h3>
 						<div class="price">
